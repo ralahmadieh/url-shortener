@@ -1,9 +1,12 @@
 import unittest
-
+#import pytest
 from fastapi.testclient import TestClient
+#from moto import mock_dynamodb2
+#import boto3
 from main import app, URLModel
 
 client = TestClient(app)
+
 
 def clear_table():
     for url in URLModel.scan():
